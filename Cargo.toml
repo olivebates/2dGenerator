@@ -1,0 +1,26 @@
+[package]
+name = "sepia-chat"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = "0.31.1"
+egui_commonmark = { version = "0.20", default-features = false }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rfd = "0.15"
+directories = "6"
+tempfile = "3"
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "multipart", "rustls-tls"] }
+keyring = { version = "3", features = ["windows-native"] }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp"] }
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+unicode-segmentation = "1"
+emojis = "0.9"
+rand = "0.8"
+sha2 = "0.10"
+base64 = "0.22"
+
+[profile.release]
+opt-level = 2
+strip = true
